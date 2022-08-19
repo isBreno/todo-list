@@ -8,8 +8,13 @@ import { TaskInfosContainer, TextInfo } from "./styles"
 // Imports
 
 export const TaskInfos = () => {
-  const tasksCreated = localStorage.getItem("tasks") ? JSON.parse(localStorage.getItem("tasks")).length : 0;
-  const tasksDone = localStorage.getItem("tasks") ? JSON.parse(localStorage.getItem("tasks")).filter(task => task.done).length : 0
+
+  
+  const tasksCreated = localStorage.getItem("tasks") ? JSON.parse(localStorage.getItem("tasks")!).length : 0;
+  const tasksDone = localStorage.getItem("tasks")
+    ? JSON.parse(localStorage.getItem("tasks")!).filter((task: any) => task.done)
+        .length
+    : 0;
 
   return (
     <TaskInfosContainer>

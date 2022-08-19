@@ -23,15 +23,14 @@ export const Tasks = ({ task }: taskProps) => {
 
     const handleDelete = () => {
 
-      const newTasks = tasks.filter(task => task.id !== key)
+      const newTasks = tasks.filter((task: any) => task.id !== key);
 
       localStorage.setItem("tasks", JSON.stringify(newTasks))
 
       window.location.reload()
     };
     const handleSwitch = () => {
-      // get the task that matches the key and change the done value
-      const newTasks = tasks.map((task) => {
+      const newTasks = tasks.map((task:any) => {
         if (task.id === key) {
           task.done = !task.done;
         }
