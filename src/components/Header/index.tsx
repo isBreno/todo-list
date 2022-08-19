@@ -1,6 +1,6 @@
 // Imports
   import { HeaderContainer } from "./styles"
-  import Logo from '../../assets/logo.svg'
+  import Logo from '../../assets/Logo.svg'
 // Imports
 
 export function Header() {
