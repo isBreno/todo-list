@@ -18,13 +18,12 @@ export const Board = () => {
 
   return (
     <BoardContainer>
-      {tasks && (
+      {tasks.length > 0 ? (
         <>
           <button onClick={handleClearTasks}>Limpar tudo</button>
           {tasks.map((task: any) => <Tasks task={task} key={task.id} />)}
         </>
-      )}
-      {tasks.length === 0 && <NoTasks />}
+      ): <NoTasks />}
     </BoardContainer>
   );
 
