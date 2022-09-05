@@ -57,7 +57,7 @@ export const TaskInfos = () => {
       </TextInfo>
       <TextInfo color="#8284FA">
         <span>Concluídas</span>
-        <small>{tasksDone}</small>
+        <small>{tasksCreated! > 0 ? `${tasksDone} de ${tasksCreated}` : tasksDone}</small>
       </TextInfo>
     </TaskInfosContainer>
   );

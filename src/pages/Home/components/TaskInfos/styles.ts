@@ -34,6 +34,6 @@ export const TextInfo = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 35px;
+    padding: 10px;
   }
 `;
