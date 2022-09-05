@@ -19,6 +19,15 @@ export const InputForm = styled.form`
     font-size: 1.4rem;
     cursor: pointer;
     font-weight: bold;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #4ea8de;
+    }
+
+    &:focus {
+      background: #4ea8de;
+    }
   }
 
   input {

@@ -2,7 +2,7 @@
 
 import { Check, Trash } from "phosphor-react";
 import { useEffect, useState } from "react";
-import { TaskCard } from "./styles";
+import { DeleteButton, TaskCard } from "./styles";
 
 // Imports
 
@@ -43,9 +43,9 @@ export const Tasks = ({ task }: taskProps) => {
         </button>
         <p>{task.title}</p>
       </div>
-      <button className="button1" onClick={handleDelete}>
-        <Trash size={16} color="white" />
-      </button>
+      <DeleteButton onClick={handleDelete}>
+        <Trash size={24}  />
+      </DeleteButton>
     </TaskCard>
   );
 };

@@ -8,10 +8,6 @@ import { Tasks } from "./Tasks";
 // Imports
 
 export const Board = () => {
-  const handleClearTasks = () => {
-    localStorage.clear();
-    window.dispatchEvent(new Event("storage"));
-  };
   // get tasks from localStorage array
   const [tasks, setTasks] = useState([]);
 
@@ -28,7 +24,6 @@ export const Board = () => {
     <BoardContainer>
       {tasks.length > 0 ? (
         <>
-          <button onClick={handleClearTasks}>Limpar tudo</button>
           {tasks.map((task: any) => (
             <Tasks task={task} key={task.id} />
           ))}

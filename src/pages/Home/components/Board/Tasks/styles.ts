@@ -7,7 +7,7 @@ interface TaskStatus {
 export const TaskCard = styled.div<TaskStatus>`
   display: flex;
   margin-top: 15px;
-  justify-content: space-between;
+
 
   background: #262626;
   ${(props) => !props.done && "border: 1px solid #333333;"}
@@ -18,7 +18,7 @@ export const TaskCard = styled.div<TaskStatus>`
   width: 100%;
   height: 72px;
   position: relative;
-  width: 100%;
+  -o-text-overflow: clip;
 
   > div {
     display: flex;
@@ -38,12 +38,11 @@ export const TaskCard = styled.div<TaskStatus>`
     border-radius: 100%;
     border: ${(props) => (props.done ? "none" : "1px solid #1e6f9f")};
     background: ${(props) => (props.done ? "#5E60CE" : "#262626")};
-  }
 
-  button:nth-child(2) {
-    background: none;
-    border: none;
-    display: block;
+    &:hover {
+      background: ${(props) => props.done && "#8284FA"};
+      border: ${(props) => (props.done ? "" : "#1E6F9F 1px solid")};
+    }
   }
 
   p {
@@ -51,16 +50,43 @@ export const TaskCard = styled.div<TaskStatus>`
     color: ${(props) => (props.done ? "#808080" : "#FEFEFE")};
     text-decoration: ${(props) => (props.done ? "line-through" : "none")};
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+-webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    max-width: 50%;
+    text-overflow: clip;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+`;
 
+export const DeleteButton = styled.button`
+  background: none;
+  border: none;
+  outline: none;
+  position: absolute;
+  right: 10px;
+  svg {
+    min-height: 24px;
+    min-width: 24px;
+    padding: 4px;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+
+    &:hover {
+      color: #e25858;
+      background: #333;
+    }
   }
 
-  svg {
-    min-height: 16px;
-    min-width: 16px;
-    cursor: pointer;
+  &:focus {
+    svg {
+      border-radius: 5px;
+
+        color: #e25858;
+        background: #333;
+    }
   }
 `;
