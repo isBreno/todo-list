@@ -25,7 +25,7 @@ export const TaskCard = styled.div<TaskStatus>`
     gap: 1rem;
   }
 
-  button {
+  button:nth-child(1) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,6 +38,12 @@ export const TaskCard = styled.div<TaskStatus>`
     border-radius: 100%;
     border: ${(props) => (props.done ? "none" : "1px solid #1e6f9f")};
     background: ${(props) => (props.done ? "#5E60CE" : "#262626")};
+  }
+
+  button:nth-child(2) {
+    background: none;
+    border: none;
+    display: block;
   }
 
   p {
