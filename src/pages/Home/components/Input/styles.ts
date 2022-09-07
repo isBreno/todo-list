@@ -28,6 +28,10 @@ export const InputForm = styled.form`
     &:focus {
       background: #4ea8de;
     }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 
   input {

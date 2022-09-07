@@ -38,8 +38,9 @@ export const Input = () => {
         placeholder="Adicione uma nova tarefa"
         onChange={(e) => setTaskTitle(e.currentTarget.value)}
         value={taskTitle}
+        maxLength={95}
       />
-      <button type="submit">
+      <button type="submit" disabled={!taskTitle.trim()}>
         Criar <PlusCircle size={18} />
       </button>
     </InputForm>

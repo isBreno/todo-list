@@ -7,6 +7,7 @@ interface TaskStatus {
 export const TaskCard = styled.div<TaskStatus>`
   display: flex;
   margin-top: 15px;
+  position: relative;
 
 
   background: #262626;
@@ -17,8 +18,6 @@ export const TaskCard = styled.div<TaskStatus>`
   gap: 12px;
   width: 100%;
   height: 72px;
-  position: relative;
-  -o-text-overflow: clip;
 
   > div {
     display: flex;
@@ -54,7 +53,6 @@ export const TaskCard = styled.div<TaskStatus>`
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 50%;
     text-overflow: clip;
     overflow-wrap: break-word;
     white-space: normal;

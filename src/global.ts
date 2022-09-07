@@ -10,6 +10,8 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.6;
     background: #1A1A1A;
     color: #F2F2F2;
+    height: 100%;
+    min-height: 100vh;
   }
 
   * {
